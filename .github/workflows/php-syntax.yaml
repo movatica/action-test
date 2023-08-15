@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run php syntax check on .php files
-        run:  find . -type f -iname "*.php" -print0 | xargs -0 php --syntax
+        run:  find . -type f -iname "*.php" -print0 | xargs -0 -n1 php --syntax-check
