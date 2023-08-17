@@ -1,4 +1,4 @@
-ternname: Google Closure Compiler
+name: Google Closure Compiler
 
 on:
   workflow_dispatch:
