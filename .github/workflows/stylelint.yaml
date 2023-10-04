@@ -1,0 +1,18 @@
+name: Stylelint
+
+on:
+  workflow_dispatch:
+  push:
+    paths: [ '**.css', '**.less' ]
+  pull_request:
+    paths: [ '**.css', '**.less' ]
+
+jobs:
+  Stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Stylelint
+        run:  npm init stylelint
+      - name: Run Stylelint on .css and .less files
+        run:  npx stylelint "**/*.{css,less]"
