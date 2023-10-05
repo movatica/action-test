@@ -16,6 +16,7 @@ jobs:
       - name: Install Stylelint
         run:  npm install stylelint stylelint-less stylelint-config-standard-less
       - name: Create Stylelint config
-        run:  echo '{ "extends": "stylelint-config-standard-less" }' > .stylelintrc.json
+        run:  |
+          echo '{ "extends": "stylelint-config-standard-less" }' > .stylelintrc.json
       - name: Run Stylelint on .less files
         run:  npx stylelint "**/*.less"
