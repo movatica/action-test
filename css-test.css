@@ -2,5 +2,5 @@
   color: rgb(2,2,2);
 }
 #this > a {
-  border: 1px solid @less_color;
+  border: 1px solid black;
 }
