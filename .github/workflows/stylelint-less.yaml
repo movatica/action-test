@@ -1,0 +1,21 @@
+name: Stylelint-less
+
+on:
+  workflow_dispatch:
+  push:
+    paths: [ '**.less' ]
+  pull_request:
+    paths: [ '**.less' ]
+
+jobs:
+  Stylelint-less:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install Stylelint
+        run:  npm install stylelint stylelint-less stylelint-config-standard-less
+      - name: Create Stylelint config
+        run:  echo '{ "extends": "stylelint-config-standard-less" }' > .stylelintrc.json
+      - name: Run Stylelint on .less files
+        run:  npx stylelint "**/*.less"
