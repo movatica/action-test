@@ -21,8 +21,8 @@ jobs:
                 /opt/az
                 /usr/lib/heroku
                 /usr/local/lib/{android,node_modules}
-                /usr/local/share/{powershell,chromium,swift}
-                /usr/share/{dotnet,kotlinc,miniconda,php} /usr/share/az_*
+                /usr/local/share/{powershell,chromium}
+                /usr/share/{dotnet,kotlinc,miniconda,php,swift} /usr/share/az_*
       - name: Installed packages
         run:  apt list --installed
       - name: Package size overview
