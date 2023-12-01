@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Installed packages
         run:  apt list --installed
+      - name: Package size overview
+        run:  dpkg-query -Wf '${Installed-size;9}\t${Package}\t${db:Status-Abbrev}\n' | grep -E 'ii $' | cut -f-2 | sort -rn
       - name: Disk usage overview
         run:  df -h
       - name: Disk usage details
