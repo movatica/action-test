@@ -16,7 +16,12 @@ jobs:
                 microsoft-edge* google-chrome* firefox
                 mongodb* mysql* libmysql*;
               sudo apt-get clean;
-              sudo rm -rf /usr/local/lib/{android,node_modules} /usr/share/az_*
+              sudo rm -rf
+                /etc/{mono,mysql,php}
+                /opt/az
+                /usr/local/lib/{android,node_modules}
+                /usr/local/share/{powershell,chromium}
+                /usr/share/{dotnet,kotlinc,miniconda,php} /usr/share/az_*
       - name: Installed packages
         run:  apt list --installed
       - name: Package size overview
