@@ -9,12 +9,12 @@ jobs:
       - name: Uninstall some packages
         run:  sudo apt-get update;
               sudo apt-get remove --purge --autoremove --yes \
-              dotnet* mono* libmono* \
-              azure* google-cloud* \
-              microsoft-edge* google-chrome* firefox \
-              mongodb* mysql* libmysql* \
-              mono* google-cloud* temurin* \
-              ruby* php7* php8* llvm* libllvm* clang* libclang* hhvm;
+                dotnet* mono* libmono* \
+                azure* google-cloud* \
+                microsoft-edge* google-chrome* firefox \
+                mongodb* mysql* libmysql* \
+                mono* google-cloud* temurin* \
+                libruby* ruby* php7* php8* llvm* libllvm* clang* libclang* hhvm;
               sudo apt-get clean
       - name: Installed packages
         run:  apt list --installed
