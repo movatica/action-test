@@ -11,4 +11,4 @@ jobs:
       - name: Disk usage overview
         run:  df -h
       - name: Disk usage details
-        run:  for dir in /opt /usr /usr/lib /usr/local/lib /usr/local/share /usr/share; do du -a -h -d 1 ${dir} | sort -h -r; done
+        run:  for dir in /opt /usr /usr/lib /usr/local/lib /usr/local/share /usr/share; do du -ahd 1 ${dir}; done | sort -hru
