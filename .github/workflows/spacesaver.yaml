@@ -12,14 +12,15 @@ jobs:
                 dotnet* mono* libmono* temurin* powershell
                 libruby* ruby* php7* php8* hhvm
                 llvm* libllvm* clang* libclang*
-                azure* google-cloud* apache2* podman*
+                azure* google-cloud* apache2* podman* kubectl
                 microsoft-edge* google-chrome* firefox
-                mongodb* mysql* libmysql*;
+                mongodb* mysql* libmysql*
+                r-base* r-cran* r-doc* r-recommended;
               sudo apt-get clean;
               sudo rm -rf
                 /etc/{mono,mysql,php}
-                /opt/az
-                /usr/lib/heroku
+                /opt/{az,microsoft}
+                /usr/lib/{heroku,R}
                 /usr/local/lib/{android,node_modules}
                 /usr/local/share/{powershell,chromium}
                 /usr/share/{dotnet,kotlinc,miniconda,php,swift} /usr/share/az_*
