@@ -19,8 +19,9 @@ jobs:
               sudo rm -rf
                 /etc/{mono,mysql,php}
                 /opt/az
+                /usr/lib/heroku
                 /usr/local/lib/{android,node_modules}
-                /usr/local/share/{powershell,chromium}
+                /usr/local/share/{powershell,chromium,swift}
                 /usr/share/{dotnet,kotlinc,miniconda,php} /usr/share/az_*
       - name: Installed packages
         run:  apt list --installed
