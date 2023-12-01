@@ -6,11 +6,9 @@ jobs:
   InspectRunner:
     runs-on: ubuntu-20.04
     steps:
-      - name: List installed packages
+      - name: Installed packages
         run:  apt list --installed
-      - name: Show disk usage overview
+      - name: Disk usage overview
         run:  df -h
-      - name: Show disk usage on /opt
-        run:  du -a -h -d 1 /opt | sort -h -r
-      - name: Show disk usage on /usr
-        run:  du -a -h -d 1 /usr /usr/lib /usr/local/lib /usr/local/share /usr/share | sort -h -r
+      - name: Disk usage details
+        run:  for dir in /opt /usr /usr/lib /usr/local/lib /usr/local/share /usr/share; do du -a -h -d 1 ${dir} | sort -h -r; done
