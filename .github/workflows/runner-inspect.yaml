@@ -1,0 +1,16 @@
+name: Retrieve details about hosted runners
+
+on:
+  workflow_dispatch:
+jobs:
+  InspectRunner:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: List installed packages
+        run:  apt list --installed
+      - name: Show disk usage overview
+        run:  df
+      - name: Show disk usage on /opt
+        run:  du -h -d 1 /opt
+      - name: Show disk usage on /usr
+        run:  du -h -d 2 /usr
