@@ -1,4 +1,4 @@
-name: Retrieve details about hosted runners
+name: Collect system information on runner
 
 on:
   workflow_dispatch:
@@ -9,8 +9,8 @@ jobs:
       - name: List installed packages
         run:  apt list --installed
       - name: Show disk usage overview
-        run:  df
+        run:  df -h
       - name: Show disk usage on /opt
-        run:  du -h -d 1 /opt
+        run:  du -a -h -d 1 /opt | sort -h -r
       - name: Show disk usage on /usr
-        run:  du -h -d 2 /usr
+        run:  du -a -h -d 1 /usr /usr/lib /usr/local/lib /usr/local/share /usr/share | sort -h -r
