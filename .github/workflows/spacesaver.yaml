@@ -9,13 +9,14 @@ jobs:
       - name: Uninstall some packages
         run:  sudo apt-get update;
               sudo apt-get remove --purge --autoremove --yes
-                dotnet* mono* libmono*
-                azure* google-cloud*
+                dotnet* mono* libmono* temurin* powershell
+                libruby* ruby* php7* php8* hhvm
+                llvm* libllvm* clang* libclang*
+                azure* google-cloud* apache2* podman*
                 microsoft-edge* google-chrome* firefox
-                mongodb* mysql* libmysql*
-                mono* google-cloud* temurin*
-                libruby* ruby* php7* php8* llvm* libllvm* clang* libclang* hhvm;
-              sudo apt-get clean
+                mongodb* mysql* libmysql*;
+              sudo apt-get clean;
+              sudo rm -rf /usr/local/lib/{android,node_modules} /usr/share/az_*
       - name: Installed packages
         run:  apt list --installed
       - name: Package size overview
